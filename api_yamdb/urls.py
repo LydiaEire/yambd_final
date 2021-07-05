@@ -10,4 +10,3 @@ urlpatterns = [
     path('api/', include('title_api.urls')),
     path('api/', include('users_api.urls')),
 ]
-
