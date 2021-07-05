@@ -56,15 +56,16 @@ class YamdbUser(AbstractUser):
     Moderators can manage content, Users can publish content.
     """
 
-    class Role(models.TextChoices):
-        USER = 'user'
-        MODERATOR = 'moderator'
-        ADMIN = 'admin'
+    ROLES = (
+        ('USER', 'user'),
+        ('MODERATOR', 'moderator'),
+        ('ADMIN', 'admin'),
+    )
 
     bio = models.TextField(max_length=255, blank=True,
                            verbose_name='Users biography')
-    role = models.CharField(max_length=10, default=Role.USER,
-                            choices=Role.choices)
+    role = models.CharField(max_length=10, default='USER',
+                            choices=ROLES)
     email = models.EmailField(unique=True, db_index=True, blank=False,
                               null=False)
     USERNAME_FIELD = 'email'
@@ -82,11 +83,11 @@ class YamdbUser(AbstractUser):
 
     @property
     def is_moderator(self):
-        return self.role == self.Role.MODERATOR
+        return self.role == self.ROLES[1]
 
     @property
     def is_admin(self):
-        return self.role == self.Role.ADMIN
+        return self.role == self.ROLES[2]
 
 
 @receiver(signals.post_save, sender=YamdbUser)
