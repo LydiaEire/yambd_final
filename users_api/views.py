@@ -49,10 +49,10 @@ class ConfirmUser(generics.UpdateAPIView):
         serializer = self.get_serializer(data=request.data)
         if not serializer.is_valid():
             return Response(
-                        {'Error': serializer.errors},
-                        status=status.HTTP_400_BAD_REQUEST,
-                        content_type='application/json',
-                    )
+                {'Error': serializer.errors},
+                status=status.HTTP_400_BAD_REQUEST,
+                content_type='application/json',
+            )
         user = self.get_object()
         code = request.data.get('confirmation_code')
 
