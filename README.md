@@ -19,4 +19,11 @@ docker-compose exec web python manage.py createsuperuser
 
 ```
 docker-compose exec web python manage.py dumpdata
+
 ```
+### Основные использованные технологии
+- python 3.8
+- django
+- drf
+- posgresql
+- docker
