@@ -21,7 +21,7 @@ jobs:
     - name: Test by pytest
       run: pytest
     - name: Test by flake8
-      run: flake8 api/ api_yamdb/ --exclude api/migrations/,api_yamdb/settings.py
+      run: flake8 title_api/ api_yamdb/ --exclude title_api/migrations/,api_yamdb/settings.py
 
   build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
