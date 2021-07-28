@@ -1,6 +1,3 @@
-<!---
-https://github.com/LydiaEire/yamdb_project/actions/workflows/yamdb_workflow.yml/badge.svg
---->
 ![yamdb_workflow](https://github.com/LydiaEire/yamdb_project/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 # Yamdb
