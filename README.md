@@ -1,3 +1,4 @@
+https://github.com/LydiaEire/yambd_project/actions/workflows/yambd_workflow.yml/badge.svg
 # Yamdb
 ### Описание
 Проект YaMDb собирает отзывы пользователей на фильмы, книги и музыкальные композиции
