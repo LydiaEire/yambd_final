@@ -1,4 +1,4 @@
-![yamdb_workflow](https://github.com/LydiaEire/yamdb_project/actions/workflows/yamdb_workflow.yaml/badge.svg)
+![yamdb_workflow](https://github.com/LydiaEire/yambd_project/actions/workflows/yamdb_workflow.yaml/badge.svg)
 
 # Yamdb
 ### Описание
