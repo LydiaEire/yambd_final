@@ -56,13 +56,10 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         stack_file_name: docker-compose.yaml
         script:
-           apt update && apt install sudo
-           sudo docker pull lydiaeire/yamdb
-           sudo docker stop $(sudo docker ps -a -q)
-           sudo docker run --rm -d -p 5000:5000 lydiaeire/yambd
-#          sudo docker pull ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}:latest
-#          sudo docker-compose stop
-#          sudo docker-compose rm web
+
+          sudo docker pull ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}:latest
+          sudo docker-compose stop
+          sudo docker-compose rm web
 
 #          touch .env
 #          echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
