@@ -27,6 +27,7 @@ INSTALLED_APPS = [
 
     'title_api',
     'users_api',
+    'api_yamdb',
 
 ]
 
