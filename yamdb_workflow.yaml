@@ -56,7 +56,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         stack_file_name: docker-compose.yaml
         script:
-          sudo docker pull lydiaeire/yambd_final
+          sudo docker pull lydiaeire/yamdb
           sudo docker-compose stop
           sudo docker-compose rm web
           sudo touch .env
