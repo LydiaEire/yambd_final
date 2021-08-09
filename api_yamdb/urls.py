@@ -8,18 +8,16 @@ from drf_yasg import openapi
 from django.conf.urls import url
 
 schema_view = get_schema_view(
-   openapi.Info(
-      title="Yamdb API",
-      default_version='v1',
-      description="Документация для приложения проекта Yamdb",
-      contact=openapi.Contact(email="admin@yamdb.ru"),
-      license=openapi.License(name="BSD License"),
-   ),
-   public=True,
-   permission_classes=(permissions.AllowAny,),
+    openapi.Info(
+        title="Yamdb API",
+        default_version='v1',
+        description="Документация для приложения проекта Yamdb",
+        contact=openapi.Contact(email="admin@yamdb.ru"),
+        license=openapi.License(name="BSD License"),
+    ),
+    permission_classes=(permissions.AllowAny,),
+    public=True,
 )
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('redoc/', TemplateView.as_view(template_name='redoc.html'),
@@ -27,8 +25,7 @@ urlpatterns = [
     path('api/', include('title_api.urls')),
     path('api/', include('users_api.urls')),
 ]
-
 urlpatterns += [
-   url(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0),
-       name='schema-redoc'),
+    url(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0),
+        name='schema-redoc'),
 ]
