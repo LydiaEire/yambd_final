@@ -12,7 +12,6 @@ schema_view = get_schema_view(
       title="Yamdb API",
       default_version='v1',
       description="Документация для приложения проекта Yamdb",
-      # terms_of_service="URL страницы с пользовательским соглашением",
       contact=openapi.Contact(email="admin@yamdb.ru"),
       license=openapi.License(name="BSD License"),
    ),
@@ -23,8 +22,8 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('redoc/', TemplateView.as_view(template_name='redoc.html'),
-         #name='redoc'),
+    path('redoc/', TemplateView.as_view(template_name='redoc.html'),
+         name='redoc'),
     path('api/', include('title_api.urls')),
     path('api/', include('users_api.urls')),
 ]
