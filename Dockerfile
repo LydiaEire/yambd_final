@@ -1,21 +1,8 @@
-#FROM python:3.8.5
-#WORKDIR /code
-#RUN mkdir /code
-#COPY requirements.txt /codе
-#RUN pip install -U pip && pip install -r /code/requirements.txt
-#COPY . /code
-#CMD gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:8000
-
 FROM python:3.8.5
-
 WORKDIR /code
-
-COPY ./requirements.txt .
-
-RUN python -m pip install --upgrade pip && pip install -r requirements.txt
-
-COPY . .
-
-RUN python3 manage.py collectstatic --noinput
-
+RUN mkdir /code
+COPY requirements.txt /codе
+RUN pip install -U pip && pip install -r /code/requirements.txt
+COPY . /code
 CMD gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:8000
+
