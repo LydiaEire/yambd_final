@@ -1,7 +1,10 @@
-from datetime import timedelta
 import os
+from datetime import timedelta
+
 import django
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", __file__)
+
 django.setup()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
