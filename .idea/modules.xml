@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/yambd_final.iml" filepath="$PROJECT_DIR$/.idea/yambd_final.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/yambd_final-master/.idea/yambd_final-master.iml" filepath="$USER_HOME$/Desktop/yambd_final-master/.idea/yambd_final-master.iml" />
+    </modules>
+  </component>
+</project>
