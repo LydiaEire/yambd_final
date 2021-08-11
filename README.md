@@ -10,9 +10,9 @@ Django 2.2.19
 ## Установка
 
 #### 1. Установка docker и docker-compose
- При наличие docker и docker-compose этот шаг пропускается, иначе можно использовать официальную [инструкцию](https://docs.docker.com/engine/install/).
+ При наличии docker и docker-compose этот шаг пропускается, иначе можно использовать официальную [инструкцию](https://docs.docker.com/engine/install/).
 
-#### 2.Клонирование репозитория
+#### 2. Клонирование репозитория
 Скопируйте проект, ипользуя: 
 ```bash
 git clone https://github.com/lydiaeire/yambd_final.git
