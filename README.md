@@ -49,6 +49,6 @@ docker run <IMAGE-NAME> -e token=12345
 docker-compose run web python3 manage.py migrate
 ```
 ### Ссылка на развернутый проект:
-http://84.201.174.14/redoc/
+http://84.201.174.14/api/v1/
 ### Автор
 Лукшина Лидия (https://github.com/LydiaEire)
