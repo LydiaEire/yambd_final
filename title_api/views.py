@@ -1,3 +1,5 @@
+from typing import Union
+
 import django_filters
 from django.db.models import Avg
 from django.shortcuts import get_object_or_404
@@ -28,7 +30,7 @@ class SuperViewSet(
 class ReviewViewSet(viewsets.ModelViewSet):
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly,
-        AuthorPermissions | IsYamdbAdmin | IsYamdbModerator
+        Union[AuthorPermissions, IsYamdbAdmin, IsYamdbModerator]
     ]
 
     queryset = Review.objects.all()
@@ -47,7 +49,7 @@ class ReviewViewSet(viewsets.ModelViewSet):
 class CommentViewSet(viewsets.ModelViewSet):
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly,
-        AuthorPermissions | IsYamdbAdmin | IsYamdbModerator
+        Union[AuthorPermissions, IsYamdbAdmin, IsYamdbModerator]
     ]
     serializer_class = CommentSerializer
 
@@ -67,7 +69,7 @@ class TitleViewSet(viewsets.ModelViewSet):
         'name', 'year'
     )
     permission_classes = [
-        YamdbReadOnly | IsYamdbAdmin
+        Union[YamdbReadOnly, IsYamdbAdmin]
     ]
     filter_backends = [DjangoFilterBackend]
     filterset_class = TitleFilter
@@ -80,7 +82,7 @@ class TitleViewSet(viewsets.ModelViewSet):
 
 class CategoryViewSet(SuperViewSet):
     permission_classes = [
-        YamdbReadOnly | IsYamdbAdmin
+        Union[YamdbReadOnly, IsYamdbAdmin]
     ]
     filter_backends = (filters.SearchFilter,)
     search_fields = ['=name', ]
@@ -91,7 +93,7 @@ class CategoryViewSet(SuperViewSet):
 
 class GenreViewSet(SuperViewSet):
     permission_classes = [
-        YamdbReadOnly | IsYamdbAdmin
+        Union[YamdbReadOnly, IsYamdbAdmin]
     ]
     serializer_class = GenreSerializer
     queryset = Genre.objects.all()
